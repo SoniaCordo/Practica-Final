@@ -14,6 +14,8 @@ public class Duck : MonoBehaviour
     public float Speed;
     private Vector3 positioned;
 
+    public Vector3 direction;
+
     private void Start()
     {
         myDuckAnim = GetComponent<Animator>();
@@ -21,6 +23,11 @@ public class Duck : MonoBehaviour
     }
 
     private void Update()
+    {
+        DuckMovement();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         OnMouseDown();
     }
@@ -30,12 +37,7 @@ public class Duck : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(Die());
-
-            StartCoroutine(IsKinematic());
-        }
-        else
-        {
-            DuckMovement();
+            //StartCoroutine(IsKinematic());
         }
     }
 
@@ -44,20 +46,23 @@ public class Duck : MonoBehaviour
         rb.velocity = transform.right;
     }
 
-    public IEnumerator IsKinematic()
-    {
-        yield return new WaitForSeconds(1f);
-        rb.isKinematic = false;
-    }
+    //public IEnumerator IsKinematic()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //    rb.isKinematic = false;
+    //}
 
     public IEnumerator Die()
     {
         Game.Instance.Hit();
         isDead = true;
+
         myDuckAnim.SetTrigger("Die");
+        rb.isKinematic = false;
         yield return new WaitForSeconds(0.4f);
         isFalling = true;
-        Destroy(gameObject, 3);
+
+        Destroy(gameObject, 2);
     }
 
     public void Time()

@@ -19,12 +19,14 @@ public class Game : MonoBehaviour
     private int duckCreated;
     private int InitialDucks = 2;
 
+    private int MaxDucks;
+
     // Start is called before the first frame update
     private void Start()
     {
         Instance = this;
 
-        StartCoroutine(DuckTime());
+        //StartCoroutine(DuckTime());
         StartCoroutine(CreateDucks(InitialDucks));
     }
 
@@ -32,6 +34,10 @@ public class Game : MonoBehaviour
     private void Update()
     {
         OnMouseDown();
+        if (MaxDucks == 3)
+        {
+            StopCoroutine(CreateDucks(InitialDucks));
+        }
     }
 
     public void OnMouseDown()
