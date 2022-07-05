@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: def9fc9c7efc4c24f91e7d9b994dca10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 243420762657309222
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_2
+  - first:
+      213: -5043102433083415243
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_6
+  - first:
+      213: 1357642196701693951
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_7
+  - first:
+      213: 6011705512665610183
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_8
+  - first:
+      213: 6088222425125076376
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_10
+  - first:
+      213: 7112064136752556688
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_11
+  - first:
+      213: 2264107529520725281
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_12
+  - first:
+      213: 1774671513857734117
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_13
+  - first:
+      213: -377882342969317985
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_14
+  - first:
+      213: 2238607619364304409
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_19
+  - first:
+      213: -6402219773095749110
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_20
+  - first:
+      213: -7972418507452162925
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_21
+  - first:
+      213: -7339717713514774520
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_22
+  - first:
+      213: 415015021105279544
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_23
+  - first:
+      213: 4408255318131632210
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_24
+  - first:
+      213: 2702868774523568103
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_25
+  - first:
+      213: 3584046704802188628
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_26
+  - first:
+      213: 3416214141862695017
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_29
+  - first:
+      213: 568454076438707264
+    second: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 290
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622c429d4edc06300800000000000000
+      internalID: 243420762657309222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 216
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535a72e7e0d430ab0800000000000000
+      internalID: -5043102433083415243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 216
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff74c72826057d210800000000000000
+      internalID: 1357642196701693951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_8
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 216
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7f0b8ff4edd6350800000000000000
+      internalID: 6011705512665610183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_10
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 147
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89db523f906bd7450800000000000000
+      internalID: 6088222425125076376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_11
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 149
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a6eeaa6a023b260800000000000000
+      internalID: 7112064136752556688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_12
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 140
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dbe566dc9bb6f10800000000000000
+      internalID: 2264107529520725281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_13
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 142
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5be78d656e0a810800000000000000
+      internalID: 1774671513857734117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_14
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 144
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95eb6cd20e71caf0800000000000000
+      internalID: -377882342969317985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_19
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 71
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91631b7e4c1211f10800000000000000
+      internalID: 2238607619364304409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_20
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 72
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a55aa690fb627a0800000000000000
+      internalID: -6402219773095749110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_21
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 71
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c509e6b974c5190800000000000000
+      internalID: -7972418507452162925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_22
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 72
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8004f4680a5142a90800000000000000
+      internalID: -7339717713514774520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_23
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 71
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8327e6d76fd62c500800000000000000
+      internalID: 415015021105279544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_24
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 72
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258667c1bd44d2d30800000000000000
+      internalID: 4408255318131632210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_25
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 71
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eff8fb74d4828520800000000000000
+      internalID: 2702868774523568103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_26
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 72
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45dc42a2d771db130800000000000000
+      internalID: 3584046704802188628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_29
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960546289a4d86f20800000000000000
+      internalID: 3416214141862695017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3DS - Regular Show Mordecai and Rigby in 8-Bit Land - Geese_30
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c704188fd83e700800000000000000
+      internalID: 568454076438707264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
