@@ -27,16 +27,16 @@ public class Game : MonoBehaviour
         Instance = this;
 
         //StartCoroutine(DuckTime());
-        StartCoroutine(CreateDucks(InitialDucks));
     }
 
     // Update is called once per frame
     private void Update()
     {
+        StartCoroutine(CreateDucks(InitialDucks));
         OnMouseDown();
         if (MaxDucks == 3)
         {
-            StopCoroutine(CreateDucks(InitialDucks));
+            StopCoroutine(CreateDucks(MaxDucks));
         }
     }
 
@@ -47,7 +47,7 @@ public class Game : MonoBehaviour
             clicks++;
             scoreText.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
-            StartCoroutine(CreateDucks(InitialDucks));
+            //StartCoroutine(CreateDucks(InitialDucks));
         }
     }
 
