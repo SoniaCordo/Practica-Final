@@ -23,18 +23,25 @@ public class Game : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        StartCoroutine(CreateDucks(InitialDucks));
+
         StartCoroutine(DuckTime());
+        StartCoroutine(CreateDucks(InitialDucks));
     }
 
     // Update is called once per frame
     private void Update()
+    {
+        OnMouseDown();
+    }
+
+    public void OnMouseDown()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             clicks++;
             scoreText.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
+            StartCoroutine(CreateDucks(InitialDucks));
         }
     }
 
