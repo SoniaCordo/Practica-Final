@@ -18,25 +18,26 @@ public class Game : MonoBehaviour
 
     private int duckCreated;
     private int InitialDucks = 2;
+    private float TimeToSpawn = 2;
+    private int MaxDucks = 4;
 
-    private int MaxDucks;
+    private void Awake()
+    {
+    }
 
-    // Start is called before the first frame update
     private void Start()
     {
         Instance = this;
-
-        //StartCoroutine(DuckTime());
+        StartCoroutine(CreateDucks());
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        StartCoroutine(CreateDucks(InitialDucks));
         OnMouseDown();
+
         if (MaxDucks == 3)
         {
-            StopCoroutine(CreateDucks(MaxDucks));
+            //StopCoroutine(CreateDucks(MaxDucks));
         }
     }
 
@@ -47,29 +48,38 @@ public class Game : MonoBehaviour
             clicks++;
             scoreText.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
-            //StartCoroutine(CreateDucks(InitialDucks));
         }
     }
 
-    public IEnumerator CreateDucks(int ducks)
+    //public IEnumerator CreateDucks(int ducks)
+    //{
+    //    yield return new WaitForSeconds(0);
+    //    for (int i = 0; i < ducks; i++)
+    //    {
+    //        GameObject duck = Instantiate(duckPrefab, SpawnPoints[Random.Range(0, SpawnPoints.Length)].position, Quaternion.identity);
+    //        duckCreated++;
+    //    }
+    //}
+    public IEnumerator CreateDucks()
     {
-        yield return new WaitForSeconds(1);
-        for (int i = 0; i < ducks; i++)
+        while (true)
         {
-            GameObject duck = Instantiate(duckPrefab, SpawnPoints[Random.Range(0, SpawnPoints.Length)].position, Quaternion.identity);
-            duckCreated++;
+            yield return new WaitForSeconds(TimeToSpawn);
+            int randomPosition = Random.Range(0, SpawnPoints.Length);
+            Instantiate(duckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
+            InitialDucks++;
         }
     }
 
-    public IEnumerator DuckTime()
-    {
-        yield return new WaitForSeconds(0.2f);
-        Duck[] ducks = FindObjectsOfType<Duck>();
-        for (int i = 0; i < ducks.Length; i++)
-        {
-            ducks[i].Time();
-        }
-    }
+    //public IEnumerator DuckTime()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
+    //    Duck[] ducks = FindObjectsOfType<Duck>();
+    //    for (int i = 0; i < ducks.Length; i++)
+    //    {
+    //        ducks[i].Time();
+    //    }
+    //}
 
     public void Hit()
     {
@@ -84,9 +94,9 @@ public class Game : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         duckCreated--;
 
-        if (duckCreated <= 0)
-        {
-            StopCoroutine(DuckTime());
-        }
+        //if (duckCreated <= 0)
+        //{
+        //    StopCoroutine(DuckTime());
+        //}
     }
 }

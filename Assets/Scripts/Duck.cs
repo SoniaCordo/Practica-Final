@@ -12,6 +12,10 @@ public class Duck : MonoBehaviour
     private bool isFalling;
 
     public float Speed;
+    public float x = 10;
+    public float y;
+    public float z;
+
     private Vector3 positioned;
 
     public Vector3 direction;
@@ -20,11 +24,13 @@ public class Duck : MonoBehaviour
     {
         myDuckAnim = GetComponent<Animator>();
         DuckSprite = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        rb.isKinematic = true;
+        DuckMovement();
     }
 
     private void Update()
     {
-        DuckMovement();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +49,14 @@ public class Duck : MonoBehaviour
 
     public void DuckMovement()
     {
-        rb.velocity = transform.right;
+        //rb.velocity = transform.right;
+        if (rb != null)
+        {
+            //rb.AddForce(positioned.right * force, ForceMode2D.Force);
+            Vector3 velocity = new Vector3(x, y, z);
+            rb.velocity = velocity;
+            Destroy(gameObject, 3);
+        }
     }
 
     //public IEnumerator IsKinematic()
@@ -58,11 +71,11 @@ public class Duck : MonoBehaviour
         isDead = true;
 
         myDuckAnim.SetTrigger("Die");
-        rb.isKinematic = false;
+        //StartCoroutine(IsKinematic());
         yield return new WaitForSeconds(0.4f);
         isFalling = true;
-
-        Destroy(gameObject, 2);
+        rb.isKinematic = false;
+        Destroy(gameObject, 0.5f);
     }
 
     public void Time()
@@ -70,16 +83,4 @@ public class Duck : MonoBehaviour
         Speed *= 2;
         positioned = transform.position + new Vector3(0, 20, 0);
     }
-
-    //public void FlipCharacter()
-    //{
-    //    if (Game.Instance.SpawnPoints)
-    //    {
-    //        transform.rotation = Quaternion.identity;
-    //    }
-    //    else if (dirX < 0)
-    //    {
-    //        transform.rotation = Quaternion.Euler(0, 180, 0);
-    //    }
-    //}
 }
