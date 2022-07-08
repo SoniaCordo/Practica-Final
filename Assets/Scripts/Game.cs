@@ -8,13 +8,9 @@ public class Game : MonoBehaviour
     public static Game Instance;
 
     public Transform[] SpawnPoints;
-    public Transform Spawn0;
-    public Transform Spawn1;
-    public Transform Spawn2;
-    public Transform Spawn3;
 
     public GameObject duckPrefab;
-    public Transform Medio;
+    public SpriteRenderer DuckSprite;
 
     public Text scoreText, shotsText;
 
@@ -65,10 +61,8 @@ public class Game : MonoBehaviour
             int randomPosition = Random.Range(0, SpawnPoints.Length);
             Instantiate(duckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
             InitialDucks += 2;
-            if (duckPrefab.transform == Spawn1.transform)
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
+
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
