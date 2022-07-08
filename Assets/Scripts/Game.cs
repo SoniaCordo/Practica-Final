@@ -8,7 +8,13 @@ public class Game : MonoBehaviour
     public static Game Instance;
 
     public Transform[] SpawnPoints;
+    public Transform Spawn0;
+    public Transform Spawn1;
+    public Transform Spawn2;
+    public Transform Spawn3;
+
     public GameObject duckPrefab;
+    public Transform Medio;
 
     public Text scoreText, shotsText;
 
@@ -19,7 +25,7 @@ public class Game : MonoBehaviour
     private int duckCreated;
     private int InitialDucks = 2;
     private float TimeToSpawn = 2;
-    private int MaxDucks = 4;
+    private int MaxDucks;
 
     private void Awake()
     {
@@ -35,9 +41,9 @@ public class Game : MonoBehaviour
     {
         OnMouseDown();
 
-        if (MaxDucks == 3)
+        if (MaxDucks == 4)
         {
-            //StopCoroutine(CreateDucks(MaxDucks));
+            StopCoroutine(CreateDucks());
         }
     }
 
@@ -51,15 +57,6 @@ public class Game : MonoBehaviour
         }
     }
 
-    //public IEnumerator CreateDucks(int ducks)
-    //{
-    //    yield return new WaitForSeconds(0);
-    //    for (int i = 0; i < ducks; i++)
-    //    {
-    //        GameObject duck = Instantiate(duckPrefab, SpawnPoints[Random.Range(0, SpawnPoints.Length)].position, Quaternion.identity);
-    //        duckCreated++;
-    //    }
-    //}
     public IEnumerator CreateDucks()
     {
         while (true)
@@ -67,19 +64,13 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(TimeToSpawn);
             int randomPosition = Random.Range(0, SpawnPoints.Length);
             Instantiate(duckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
-            InitialDucks++;
+            InitialDucks += 2;
+            if (duckPrefab.transform == Spawn1.transform)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
-
-    //public IEnumerator DuckTime()
-    //{
-    //    yield return new WaitForSeconds(0.2f);
-    //    Duck[] ducks = FindObjectsOfType<Duck>();
-    //    for (int i = 0; i < ducks.Length; i++)
-    //    {
-    //        ducks[i].Time();
-    //    }
-    //}
 
     public void Hit()
     {
@@ -92,11 +83,6 @@ public class Game : MonoBehaviour
         Score += 10;
         HitShots++;
         yield return new WaitForSeconds(0.2f);
-        duckCreated--;
-
-        //if (duckCreated <= 0)
-        //{
-        //    StopCoroutine(DuckTime());
-        //}
+        InitialDucks--;
     }
 }
