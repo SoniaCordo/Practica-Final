@@ -101,6 +101,7 @@ MonoBehaviour:
   myDuckAnim: {fileID: 6483494916683820889}
   DuckSprite: {fileID: 1949004089332993485}
   rb: {fileID: 8560625238431484285}
+  duckPrefab: {fileID: 7538400797818364257}
   Speed: 10
   x: 5
   y: 0

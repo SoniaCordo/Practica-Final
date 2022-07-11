@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Duck : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Duck : MonoBehaviour
     public Animator myDuckAnim;
     public SpriteRenderer DuckSprite;
     public Rigidbody2D rb;
+    public GameObject duckPrefab;
 
     private bool isDead;
     private bool isFalling;
@@ -21,9 +23,6 @@ public class Duck : MonoBehaviour
 
     {
         Instance = this;
-        //myDuckAnim = GetComponent<Animator>();
-        //DuckSprite = GetComponent<SpriteRenderer>();
-        //rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
         DuckMovement();
     }
@@ -35,10 +34,6 @@ public class Duck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnMouseDown();
-        if (collision.gameObject.tag == "Duck")
-        {
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
-        }
     }
 
     public void OnMouseDown()
@@ -51,11 +46,31 @@ public class Duck : MonoBehaviour
 
     public void DuckMovement()
     {
-        if (rb != null)
+        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[3].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = -velocity;
-            Destroy(gameObject, 2.5f);
+            Destroy(gameObject, 3.5f);
+        }
+        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[2].position)
+        {
+            Vector3 velocity = new Vector3(x, y, z);
+            rb.velocity = -velocity;
+            Destroy(gameObject, 3.5f);
+        }
+        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[0].position)
+        {
+            Vector3 velocity = new Vector3(x, y, z);
+            rb.velocity = velocity;
+            Destroy(gameObject, 3.5f);
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[1].position)
+        {
+            Vector3 velocity = new Vector3(x, y, z);
+            rb.velocity = velocity;
+            gameObject.GetComponents<SpriteRenderer>().
+            Destroy(gameObject, 3.5f);
         }
     }
 

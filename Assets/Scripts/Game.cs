@@ -21,11 +21,6 @@ public class Game : MonoBehaviour
     private int duckCreated;
     private int InitialDucks = 2;
     private float TimeToSpawn = 2;
-    private int MaxDucks;
-
-    private void Awake()
-    {
-    }
 
     private void Start()
     {
@@ -36,11 +31,6 @@ public class Game : MonoBehaviour
     private void Update()
     {
         OnMouseDown();
-
-        if (MaxDucks == 4)
-        {
-            StopCoroutine(CreateDucks());
-        }
     }
 
     public void OnMouseDown()
@@ -77,6 +67,5 @@ public class Game : MonoBehaviour
         Score += 10;
         HitShots++;
         yield return new WaitForSeconds(0.2f);
-        InitialDucks--;
     }
 }
