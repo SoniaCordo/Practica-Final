@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
             Instantiate(duckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
             InitialDucks += 2;
 
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+            //DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 

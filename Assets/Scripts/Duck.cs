@@ -21,9 +21,9 @@ public class Duck : MonoBehaviour
 
     {
         Instance = this;
-        myDuckAnim = GetComponent<Animator>();
-        DuckSprite = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        //myDuckAnim = GetComponent<Animator>();
+        //DuckSprite = GetComponent<SpriteRenderer>();
+        //rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
         DuckMovement();
     }
@@ -35,6 +35,10 @@ public class Duck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnMouseDown();
+        if (collision.gameObject.tag == "Duck")
+        {
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     public void OnMouseDown()
@@ -50,7 +54,7 @@ public class Duck : MonoBehaviour
         if (rb != null)
         {
             Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = velocity;
+            rb.velocity = -velocity;
             Destroy(gameObject, 2.5f);
         }
     }
