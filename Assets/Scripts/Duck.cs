@@ -27,10 +27,6 @@ public class Duck : MonoBehaviour
         DuckMovement();
     }
 
-    private void Update()
-    {
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnMouseDown();
@@ -63,13 +59,13 @@ public class Duck : MonoBehaviour
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = velocity;
             Destroy(gameObject, 3.5f);
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[1].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = velocity;
-            gameObject.GetComponents<SpriteRenderer>().flipX = true;
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
             Destroy(gameObject, 3.5f);
         }
     }

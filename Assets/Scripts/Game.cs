@@ -51,8 +51,6 @@ public class Game : MonoBehaviour
             int randomPosition = Random.Range(0, SpawnPoints.Length);
             Instantiate(duckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
             InitialDucks += 2;
-
-            //DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
