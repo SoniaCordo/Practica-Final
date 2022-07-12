@@ -11,13 +11,8 @@ public class Duck : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject duckPrefab;
 
-    private bool isDead;
-    private bool isFalling;
-
     public float Speed;
-    public float x = 10;
-    public float y;
-    public float z;
+    public float x = 10, y, z;
 
     private void Start()
 
@@ -73,12 +68,11 @@ public class Duck : MonoBehaviour
     public IEnumerator Die()
     {
         Game.Instance.Hit();
-        isDead = true;
 
         myDuckAnim.SetTrigger("Die");
 
         yield return new WaitForSeconds(0.4f);
-        isFalling = true;
+
         rb.isKinematic = false;
         Destroy(gameObject, 1f);
     }

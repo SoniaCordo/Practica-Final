@@ -12,25 +12,27 @@ public class Game : MonoBehaviour
     public GameObject duckPrefab;
     public SpriteRenderer DuckSprite;
 
-    public Text scoreText, shotsText;
+    public Text scoreText, shotsText, maxScoreText;
 
-    private int Score, HitShots, clicks;
+    private int Score, HitShots, clicks, totalhitShots, maxScore;
 
-    public int totalhitShots;
-
-    private int duckCreated;
+    private int duckCreated = 0;
     private int InitialDucks = 2;
-    private float TimeToSpawn = 2;
+
+    private float TimeToSpawn = 1.5f;
 
     private void Start()
     {
         Instance = this;
+
         StartCoroutine(CreateDucks());
     }
 
     private void Update()
     {
         OnMouseDown();
+        SaveScore();
+        GetScore();
     }
 
     public void OnMouseDown()
@@ -43,6 +45,23 @@ public class Game : MonoBehaviour
         }
     }
 
+    public void SaveScore()
+    {
+        maxScore = PlayerPrefs.GetInt("MaxScore");
+        if (maxScore < Score)
+        {
+            maxScore = Score;
+            PlayerPrefs.SetInt("MaxScore", maxScore);
+        }
+    }
+
+    public void GetScore()
+    {
+        int score = PlayerPrefs.GetInt("MaxScore");
+
+        maxScoreText.text = maxScore.ToString();
+    }
+
     public IEnumerator CreateDucks()
     {
         while (true)
@@ -50,7 +69,7 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(TimeToSpawn);
             int randomPosition = Random.Range(0, SpawnPoints.Length);
             Instantiate(duckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
-            InitialDucks += 2;
+            InitialDucks++;
         }
     }
 
