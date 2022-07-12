@@ -69,7 +69,7 @@ public class Duck : MonoBehaviour
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = velocity;
-            gameObject.GetComponents<SpriteRenderer>().
+            gameObject.GetComponents<SpriteRenderer>().flipX = true;
             Destroy(gameObject, 3.5f);
         }
     }
