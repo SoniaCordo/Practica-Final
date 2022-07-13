@@ -7,6 +7,8 @@ public class Duck : MonoBehaviour
 {
     public static Duck Instance;
     [SerializeField] private Animator myDuckAnim;
+    [SerializeField] private Animator myGoldDuckAnim;
+
     public SpriteRenderer DuckSprite;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject duckPrefab;

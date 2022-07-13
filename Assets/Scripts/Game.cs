@@ -94,22 +94,23 @@ public class Game : MonoBehaviour
     public void Hit()
     {
         StartCoroutine(HitShot());
+        StartCoroutine(HitGoldShot());
     }
 
     public IEnumerator HitShot()
     {
-        if (clicks >= 3)
-        {
-            totalhitShots++;
-            Score += 30;
-            HitShots++;
-        }
-        else
-        {
-            totalhitShots++;
-            Score += 10;
-            HitShots++;
-        }
+        totalhitShots++;
+        Score += 10;
+        HitShots++;
+
+        yield return new WaitForSeconds(0.2f);
+    }
+
+    public IEnumerator HitGoldShot()
+    {
+        totalhitShots++;
+        Score += 30;
+        HitShots++;
 
         yield return new WaitForSeconds(0.2f);
     }

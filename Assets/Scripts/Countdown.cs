@@ -7,7 +7,7 @@ public class Countdown : MonoBehaviour
 {
     public Text Time;
 
-    public float InitialTime;
+    public float InicialTime;
 
     public delegate void TimeIsOVer();
 
@@ -15,17 +15,16 @@ public class Countdown : MonoBehaviour
 
     private void Start()
     {
-        //OnTimeIsOver =
         StartCoroutine(CuentaAtras());
     }
 
     public IEnumerator CuentaAtras()
     {
-        while (InitialTime >= 0)
+        while (InicialTime >= 0)
         {
             yield return null;
-            InitialTime -= UnityEngine.Time.deltaTime;
-            Time.text = InitialTime.ToString("00.0");
+            InicialTime -= UnityEngine.Time.deltaTime;
+            Time.text = InicialTime.ToString("00.0");
         }
         if (OnTimeIsOver != null)
         {
