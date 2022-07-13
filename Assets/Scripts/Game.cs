@@ -11,9 +11,10 @@ public class Game : MonoBehaviour
     public Transform[] SpawnPoints;
 
     [SerializeField] private GameObject duckPrefab;
-    [SerializeField] private SpriteRenderer DuckSprite;
+    [SerializeField] private GameObject EndGameScore;
+    public SpriteRenderer DuckSprite;
 
-    [SerializeField] private Text scoreText, shotsText, maxScoreText;
+    [SerializeField] private Text scoreText, shotsText, maxScoreText, ScoreEndGame, maxScoreEnd;
 
     private int Score, HitShots, clicks, totalhitShots, maxScore;
 
@@ -21,12 +22,14 @@ public class Game : MonoBehaviour
     private int InitialDucks = 2;
 
     private float TimeToSpawn = 1.5f;
+    public Countdown myCountdown;
 
     private void Start()
     {
         Instance = this;
 
         StartCoroutine(CreateDucks());
+        myCountdown.OnTimeIsOver += EndGame;
     }
 
     private void Update()
@@ -42,6 +45,7 @@ public class Game : MonoBehaviour
         {
             clicks++;
             scoreText.text = Score.ToString("000");
+            ScoreEndGame.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
         }
     }
@@ -61,6 +65,7 @@ public class Game : MonoBehaviour
         int score = PlayerPrefs.GetInt("MaxScore");
 
         maxScoreText.text = maxScore.ToString("000");
+        maxScoreEnd.text = maxScore.ToString("000");
     }
 
     public IEnumerator CreateDucks()
@@ -95,5 +100,11 @@ public class Game : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+    }
+
+    public void EndGame()
+    {
+        StopAllCoroutines();
+        EndGameScore.SetActive(true);
     }
 }

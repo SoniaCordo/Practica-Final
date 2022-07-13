@@ -7,7 +7,7 @@ public class Duck : MonoBehaviour
 {
     public static Duck Instance;
     [SerializeField] private Animator myDuckAnim;
-    [SerializeField] private SpriteRenderer DuckSprite;
+    public SpriteRenderer DuckSprite;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject duckPrefab;
 
@@ -42,12 +42,14 @@ public class Duck : MonoBehaviour
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = -velocity;
             Destroy(gameObject, 3.5f);
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[2].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = -velocity;
             Destroy(gameObject, 3.5f);
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[0].position)
         {
