@@ -11,8 +11,8 @@ public class Game : MonoBehaviour
     public Transform[] SpawnPoints;
 
     [SerializeField] private GameObject duckPrefab;
+    [SerializeField] private GameObject GoldDuckPrefab;
     [SerializeField] private GameObject EndGameScore;
-    public SpriteRenderer DuckSprite;
 
     [SerializeField] private Text scoreText, shotsText, maxScoreText, ScoreEndGame, maxScoreEnd;
 
@@ -29,6 +29,7 @@ public class Game : MonoBehaviour
         Instance = this;
 
         StartCoroutine(CreateDucks());
+        StartCoroutine(CreateGoldDucks());
         myCountdown.OnTimeIsOver += EndGame;
     }
 
@@ -79,6 +80,17 @@ public class Game : MonoBehaviour
         }
     }
 
+    public IEnumerator CreateGoldDucks()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(2, 9));
+            int randomPosition = Random.Range(0, SpawnPoints.Length);
+            Instantiate(GoldDuckPrefab, SpawnPoints[randomPosition].position, Quaternion.identity);
+            InitialDucks++;
+        }
+    }
+
     public void Hit()
     {
         StartCoroutine(HitShot());
@@ -86,9 +98,19 @@ public class Game : MonoBehaviour
 
     public IEnumerator HitShot()
     {
-        totalhitShots++;
-        Score += 10;
-        HitShots++;
+        if (clicks >= 3)
+        {
+            totalhitShots++;
+            Score += 30;
+            HitShots++;
+        }
+        else
+        {
+            totalhitShots++;
+            Score += 10;
+            HitShots++;
+        }
+
         yield return new WaitForSeconds(0.2f);
     }
 
