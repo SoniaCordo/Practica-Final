@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Duck : MonoBehaviour
 {
     public static Duck Instance;
-    public Animator myDuckAnim;
-    public SpriteRenderer DuckSprite;
-    public Rigidbody2D rb;
-    public GameObject duckPrefab;
+    [SerializeField] private Animator myDuckAnim;
+    [SerializeField] private SpriteRenderer DuckSprite;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject duckPrefab;
 
-    public float Speed;
-    public float x = 10, y, z;
+    [SerializeField] private float Speed;
+    [SerializeField] private float x = 10, y, z;
 
     private void Start()
 
@@ -74,6 +74,6 @@ public class Duck : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
 
         rb.isKinematic = false;
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 2.25f);
     }
 }

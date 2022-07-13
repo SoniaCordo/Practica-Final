@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class Game : MonoBehaviour
 
     public Transform[] SpawnPoints;
 
-    public GameObject duckPrefab;
-    public SpriteRenderer DuckSprite;
+    [SerializeField] private GameObject duckPrefab;
+    [SerializeField] private SpriteRenderer DuckSprite;
 
-    public Text scoreText, shotsText, maxScoreText;
+    [SerializeField] private Text scoreText, shotsText, maxScoreText;
 
     private int Score, HitShots, clicks, totalhitShots, maxScore;
 
@@ -84,5 +85,15 @@ public class Game : MonoBehaviour
         Score += 10;
         HitShots++;
         yield return new WaitForSeconds(0.2f);
+    }
+
+    public void RestarLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
     }
 }
