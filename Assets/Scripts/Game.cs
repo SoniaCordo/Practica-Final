@@ -59,7 +59,7 @@ public class Game : MonoBehaviour
     {
         int score = PlayerPrefs.GetInt("MaxScore");
 
-        maxScoreText.text = maxScore.ToString();
+        maxScoreText.text = maxScore.ToString("000");
     }
 
     public IEnumerator CreateDucks()
