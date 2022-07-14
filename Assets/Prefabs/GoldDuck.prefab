@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4210530049774982050}
   - component: {fileID: 4210530049774982051}
   - component: {fileID: 8524825423761872980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GoldDuck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDuckAnim: {fileID: 4210530049774982061}
+  myGoldDuckAnim: {fileID: 0}
   DuckSprite: {fileID: 4210530049774982060}
   rb: {fileID: 4210530049774982051}
   duckPrefab: {fileID: 7538400797818364257, guid: 9f46ee065c91ce04d8dc9465745dd027, type: 3}

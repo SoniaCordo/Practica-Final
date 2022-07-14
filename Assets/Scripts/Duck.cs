@@ -18,6 +18,8 @@ public class Duck : MonoBehaviour
     [SerializeField] private float x = 10, y, z;
     [SerializeField] private int health;
 
+    [SerializeField] private LayerMask GoldDuck;
+
     private void Start()
 
     {
@@ -113,7 +115,7 @@ public class Duck : MonoBehaviour
 
     public IEnumerator Die()
     {
-        Game.Instance.Hit();
+        ScoreManager.Instance.Hit();
 
         myDuckAnim.SetTrigger("Die");
 

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8560625238431484285}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Duck
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myDuckAnim: {fileID: 6483494916683820889}
+  myGoldDuckAnim: {fileID: 0}
   DuckSprite: {fileID: 4740102971375757285}
   rb: {fileID: 8560625238431484285}
   duckPrefab: {fileID: 7538400797818364257}
