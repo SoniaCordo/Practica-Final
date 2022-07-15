@@ -23,7 +23,10 @@ public class Duck : MonoBehaviour
     private void Start()
 
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
         rb.isKinematic = true;
         DuckMovement();
         GoldDuckMovement();
@@ -38,9 +41,13 @@ public class Duck : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (health == 0)
+            if (health == 0 && tag == "Duck")
             {
                 StartCoroutine(Die());
+            }
+            else if (health == 0 && tag == "GoldDuck")
+            {
+                StartCoroutine(DieGold());
             }
             else
             {
@@ -83,28 +90,28 @@ public class Duck : MonoBehaviour
 
     public void GoldDuckMovement()
     {
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPoints[3].position)
+        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[3].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = -velocity;
             Destroy(gameObject, 3.5f);
             DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPoints[2].position)
+        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[2].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = -velocity;
             Destroy(gameObject, 3.5f);
             DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPoints[0].position)
+        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[0].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = velocity;
             Destroy(gameObject, 3.5f);
             DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
         }
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPoints[1].position)
+        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[1].position)
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = velocity;
@@ -115,7 +122,19 @@ public class Duck : MonoBehaviour
 
     public IEnumerator Die()
     {
-        ScoreManager.Instance.Hit();
+        Game.Instance.Hit();
+
+        myDuckAnim.SetTrigger("Die");
+
+        yield return new WaitForSeconds(0.4f);
+
+        rb.isKinematic = false;
+        Destroy(gameObject, 2.25f);
+    }
+
+    public IEnumerator DieGold()
+    {
+        Game.Instance.HitGold();
 
         myDuckAnim.SetTrigger("Die");
 
