@@ -104,15 +104,11 @@ MonoBehaviour:
   rb: {fileID: 8560625238431484285}
   duckPrefab: {fileID: 7538400797818364257}
   GoldDuckPrefab: {fileID: 4210530049774982049, guid: 87ebc402d04397f46a96f5327994fe0b, type: 3}
-  Speed: 10
-  x: 5
+  Speed: 100
+  x: 6
   y: 0
   z: 0
   health: 0
-  GoldDuck:
-    serializedVersion: 2
-    m_Bits: 0
-  ScoreDuck: 10
 --- !u!61 &6330489460556889118
 BoxCollider2D:
   m_ObjectHideFlags: 0

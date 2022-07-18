@@ -6,19 +6,14 @@ using UnityEngine.UI;
 public class Duck : MonoBehaviour
 {
     public static Duck Instance;
-    [SerializeField] private Animator myDuckAnim;
-    [SerializeField] private Animator myGoldDuckAnim;
+    [SerializeField] private Animator myDuckAnim, myGoldDuckAnim;
 
     public SpriteRenderer DuckSprite;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private GameObject duckPrefab;
-    [SerializeField] private GameObject GoldDuckPrefab;
+    [SerializeField] private GameObject duckPrefab, GoldDuckPrefab;
 
-    [SerializeField] private float Speed;
-    [SerializeField] private float x = 10, y, z;
+    [SerializeField] private float x, y, z;
     [SerializeField] private int health;
-
-    [SerializeField] private LayerMask GoldDuck;
 
     private void Start()
 
@@ -44,10 +39,12 @@ public class Duck : MonoBehaviour
             if (health == 0 && tag == "Duck")
             {
                 StartCoroutine(Die());
+                AudioManager.Instance.PlayDuckSound();
             }
             else if (health == 0 && tag == "GoldDuck")
             {
                 StartCoroutine(DieGold());
+                AudioManager.Instance.PlayDuckSound();
             }
             else
             {
