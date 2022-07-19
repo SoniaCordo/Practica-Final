@@ -8,18 +8,15 @@ public class Game : MonoBehaviour
 {
     public static Game Instance;
 
-    public Transform[] SpawnPoints;
-    public Transform[] SpawnPointsGold;
+    public Transform[] SpawnPoints, SpawnPointsGold;
 
     [SerializeField] private Text scoreText, shotsText, maxScoreText, ScoreEndGame, maxScoreEnd;
 
     private int Score, HitShots, clicks, totalhitShots, maxScore;
 
-    [SerializeField] private GameObject duckPrefab;
-    [SerializeField] private GameObject GoldDuckPrefab;
-    [SerializeField] private GameObject EndGameScore;
+    [SerializeField] private GameObject duckPrefab, GoldDuckPrefab;
 
-    public int InitialDucks;
+    [SerializeField] private GameObject EndGameScore;
 
     private float TimeToSpawn = 1.25f;
     public Countdown myCountdown;
