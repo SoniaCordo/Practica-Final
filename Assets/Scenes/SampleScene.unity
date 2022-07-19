@@ -878,6 +878,7 @@ MonoBehaviour:
   duckPrefab: {fileID: 7538400797818364257, guid: 9f46ee065c91ce04d8dc9465745dd027, type: 3}
   GoldDuckPrefab: {fileID: 4210530049774982049, guid: 87ebc402d04397f46a96f5327994fe0b, type: 3}
   EndGameScore: {fileID: 1620505665}
+  InitialDucks: 2
   myCountdown: {fileID: 1772518835}
 --- !u!4 &667983754
 Transform:

@@ -55,65 +55,39 @@ public class Duck : MonoBehaviour
 
     public void DuckMovement()
     {
-        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[3].position)
-        //{
-        //    Vector3 velocity = new Vector3(x, y, z);
-        //    rb.velocity = -velocity;
-        //    Destroy(gameObject, 3.5f);
-        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
-        //}
-        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[2].position)
-        //{
-        //    Vector3 velocity = new Vector3(x, y, z);
-        //    rb.velocity = -velocity;
-        //    Destroy(gameObject, 3.5f);
-        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
-        //}
-        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[0].position)
-        //{
-        //    Vector3 velocity = new Vector3(x, y, z);
-        //    rb.velocity = velocity;
-        //    Destroy(gameObject, 3.5f);
-        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
-        //}
-        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[1].position)
-        //{
-        //    Vector3 velocity = new Vector3(x, y, z);
-        //    rb.velocity = velocity;
-        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
-        //    Destroy(gameObject, 3.5f);
-        //}
+        if ((duckPrefab.transform.position == Game.Instance.SpawnPoints[3].position) || (duckPrefab.transform.position == Game.Instance.SpawnPoints[2].position))
+        {
+            Vector3 velocity = new Vector3(x, y, z);
+            rb.velocity = -velocity;
+            Destroy(gameObject, 3.5f);
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if ((duckPrefab.transform.position == Game.Instance.SpawnPoints[0].position) || (duckPrefab.transform.position == Game.Instance.SpawnPoints[1].position))
+        {
+            Vector3 velocity = new Vector3(x, y, z);
+            rb.velocity = velocity;
+            Destroy(gameObject, 3.5f);
+            DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     public void GoldDuckMovement()
     {
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[3].position)
+        if ((GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[3].position) || (GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[2].position))
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = -velocity;
             Destroy(gameObject, 3.5f);
             DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
         }
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[2].position)
-        {
-            Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = -velocity;
-            Destroy(gameObject, 3.5f);
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[0].position)
+
+        if ((GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[0].position) || (GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[1].position))
         {
             Vector3 velocity = new Vector3(x, y, z);
             rb.velocity = velocity;
             Destroy(gameObject, 3.5f);
             DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
-        }
-        if (rb != null && GoldDuckPrefab.transform.position == Game.Instance.SpawnPointsGold[1].position)
-        {
-            Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = velocity;
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
-            Destroy(gameObject, 3.5f);
         }
     }
 
@@ -122,6 +96,7 @@ public class Duck : MonoBehaviour
         Game.Instance.Hit();
 
         myDuckAnim.SetTrigger("Die");
+        rb.velocity = new Vector2(0, 0);
 
         yield return new WaitForSeconds(0.4f);
 
@@ -134,6 +109,7 @@ public class Duck : MonoBehaviour
         Game.Instance.HitGold();
 
         myDuckAnim.SetTrigger("Die");
+        rb.velocity = new Vector2(0, 0);
 
         yield return new WaitForSeconds(0.4f);
 

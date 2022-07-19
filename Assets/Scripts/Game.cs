@@ -19,10 +19,9 @@ public class Game : MonoBehaviour
     [SerializeField] private GameObject GoldDuckPrefab;
     [SerializeField] private GameObject EndGameScore;
 
-    private int duckCreated;
-    private int InitialDucks;
+    public int InitialDucks;
 
-    private float TimeToSpawn = 1.5f;
+    private float TimeToSpawn = 1.25f;
     public Countdown myCountdown;
 
     private void Start()
@@ -31,7 +30,7 @@ public class Game : MonoBehaviour
         {
             Instance = this;
         }
-        InitialDucks = 2;
+
         StartCoroutine(CreateDucks());
         StartCoroutine(CreateGoldDucks());
         myCountdown.OnTimeIsOver += EndGame;
@@ -52,7 +51,7 @@ public class Game : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(2.5f, 7));
-            int randomPosition = Random.Range(0, SpawnPoints.Length);
+            int randomPosition = Random.Range(0, SpawnPointsGold.Length);
             Instantiate(GoldDuckPrefab, SpawnPointsGold[randomPosition].position, Quaternion.identity);
         }
     }
@@ -98,11 +97,6 @@ public class Game : MonoBehaviour
         StartCoroutine(HitShot());
     }
 
-    public void HitGold()
-    {
-        StartCoroutine(HitShotGold());
-    }
-
     public IEnumerator HitShot()
     {
         totalhitShots++;
@@ -110,6 +104,11 @@ public class Game : MonoBehaviour
         Score += 10;
 
         yield return new WaitForSeconds(0.2f);
+    }
+
+    public void HitGold()
+    {
+        StartCoroutine(HitShotGold());
     }
 
     public IEnumerator HitShotGold()
