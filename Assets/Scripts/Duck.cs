@@ -55,34 +55,34 @@ public class Duck : MonoBehaviour
 
     public void DuckMovement()
     {
-        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[3].position)
-        {
-            Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = -velocity;
-            Destroy(gameObject, 3.5f);
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[2].position)
-        {
-            Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = -velocity;
-            Destroy(gameObject, 3.5f);
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[0].position)
-        {
-            Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = velocity;
-            Destroy(gameObject, 3.5f);
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
-        }
-        if (rb != null && duckPrefab.transform.position == Game.Instance.SpawnPoints[1].position)
-        {
-            Vector3 velocity = new Vector3(x, y, z);
-            rb.velocity = velocity;
-            DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
-            Destroy(gameObject, 3.5f);
-        }
+        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[3].position)
+        //{
+        //    Vector3 velocity = new Vector3(x, y, z);
+        //    rb.velocity = -velocity;
+        //    Destroy(gameObject, 3.5f);
+        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+        //}
+        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[2].position)
+        //{
+        //    Vector3 velocity = new Vector3(x, y, z);
+        //    rb.velocity = -velocity;
+        //    Destroy(gameObject, 3.5f);
+        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = true;
+        //}
+        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[0].position)
+        //{
+        //    Vector3 velocity = new Vector3(x, y, z);
+        //    rb.velocity = velocity;
+        //    Destroy(gameObject, 3.5f);
+        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
+        //}
+        //if (duckPrefab.transform.position == Game.Instance.SpawnPoints[1].position)
+        //{
+        //    Vector3 velocity = new Vector3(x, y, z);
+        //    rb.velocity = velocity;
+        //    DuckSprite.GetComponent<SpriteRenderer>().flipX = false;
+        //    Destroy(gameObject, 3.5f);
+        //}
     }
 
     public void GoldDuckMovement()
