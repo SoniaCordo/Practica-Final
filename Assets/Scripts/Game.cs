@@ -31,6 +31,7 @@ public class Game : MonoBehaviour
         StartCoroutine(CreateDucks());
         StartCoroutine(CreateGoldDucks());
         myCountdown.OnTimeIsOver += EndGame;
+        AudioManager.Instance.PlayAmbientalMusic();
     }
 
     public IEnumerator CreateDucks()
@@ -47,7 +48,7 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2.5f, 7));
+            yield return new WaitForSeconds(Random.Range(2.5f, 5f));
             int randomPosition = Random.Range(0, SpawnPointsGold.Length);
             Instantiate(GoldDuckPrefab, SpawnPointsGold[randomPosition].position, Quaternion.identity);
         }
@@ -136,5 +137,7 @@ public class Game : MonoBehaviour
     {
         StopAllCoroutines();
         EndGameScore.SetActive(true);
+        AudioManager.Instance.AmbientalMusic.Stop();
+        AudioManager.Instance.PlayEndGameMusic();
     }
 }
