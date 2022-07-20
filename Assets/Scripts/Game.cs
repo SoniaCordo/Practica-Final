@@ -48,7 +48,7 @@ public class Game : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2.5f, 5f));
+            yield return new WaitForSeconds(Random.Range(2.5f, 3.75f));
             int randomPosition = Random.Range(0, SpawnPointsGold.Length);
             Instantiate(GoldDuckPrefab, SpawnPointsGold[randomPosition].position, Quaternion.identity);
         }
