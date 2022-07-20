@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Game : MonoBehaviour
 {
@@ -63,13 +64,15 @@ public class Game : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if (Time.timeScale == 0.0f)
+        {
+        }
         if (Input.GetButtonDown("Fire1"))
         {
             clicks++;
             scoreText.text = Score.ToString("000");
             ScoreEndGame.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
-            HitsInPause();
         }
     }
 
@@ -139,14 +142,6 @@ public class Game : MonoBehaviour
         else
         {
             AudioManager.Instance.PlayAmbientalMusic();
-        }
-    }
-
-    public void HitsInPause()
-    {
-        if (Time.timeScale < 1.0f)
-        {
-            clicks--;
         }
     }
 

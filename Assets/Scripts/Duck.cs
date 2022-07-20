@@ -34,15 +34,15 @@ public class Duck : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (health == 0)
+            if (health == 0 && tag == "Duck")
             {
                 StartCoroutine(Die());
-                StartCoroutine(DieGold());
                 AudioManager.Instance.PlayDuckSound();
             }
-            else
+            else if (health == 0 && tag == "GoldDuck")
             {
-                health--;
+                StartCoroutine(DieGold());
+                AudioManager.Instance.PlayDuckSound();
             }
         }
     }

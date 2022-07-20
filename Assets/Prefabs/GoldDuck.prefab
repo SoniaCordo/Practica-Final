@@ -170,7 +170,6 @@ MonoBehaviour:
   rb: {fileID: 4210530049774982051}
   duckPrefab: {fileID: 7538400797818364257, guid: 9f46ee065c91ce04d8dc9465745dd027, type: 3}
   GoldDuckPrefab: {fileID: 4210530049774982049}
-  Speed: 10
   x: 5
   y: 0
   z: 0
