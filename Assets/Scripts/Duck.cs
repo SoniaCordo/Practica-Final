@@ -18,10 +18,8 @@ public class Duck : MonoBehaviour
     private void Start()
 
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+        Instance = this;
+
         rb.isKinematic = true;
         DuckMovement();
         GoldDuckMovement();
@@ -36,13 +34,9 @@ public class Duck : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (health == 0 && tag == "Duck")
+            if (health == 0)
             {
                 StartCoroutine(Die());
-                AudioManager.Instance.PlayDuckSound();
-            }
-            else if (health == 0 && tag == "GoldDuck")
-            {
                 StartCoroutine(DieGold());
                 AudioManager.Instance.PlayDuckSound();
             }

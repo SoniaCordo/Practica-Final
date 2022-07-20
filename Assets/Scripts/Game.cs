@@ -69,6 +69,7 @@ public class Game : MonoBehaviour
             scoreText.text = Score.ToString("000");
             ScoreEndGame.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
+            HitsInPause();
         }
     }
 
@@ -131,6 +132,22 @@ public class Game : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        if (Time.timeScale == 0.0f)
+        {
+            AudioManager.Instance.AmbientalMusic.Pause();
+        }
+        else
+        {
+            AudioManager.Instance.PlayAmbientalMusic();
+        }
+    }
+
+    public void HitsInPause()
+    {
+        if (Time.timeScale < 1.0f)
+        {
+            clicks--;
+        }
     }
 
     public void EndGame()
