@@ -159,7 +159,7 @@ public class Game : MonoBehaviour
 
     public void NotClickButton()
     {
-        clicks = 0;
+        clicks--;
     }
 
     public void EndGame()
