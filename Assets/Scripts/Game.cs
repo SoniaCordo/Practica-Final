@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
@@ -13,14 +14,16 @@ public class Game : MonoBehaviour
 
     [SerializeField] private Text scoreText, shotsText, maxScoreText, ScoreEndGame, maxScoreEnd;
 
-    private int Score, HitShots, clicks, totalhitShots, maxScore;
+    private int Score, HitShots, clicks, maxScore;
 
     [SerializeField] private GameObject duckPrefab, GoldDuckPrefab;
 
-    [SerializeField] private GameObject EndGameScore;
+    [SerializeField] private GameObject EndGameScore, MenuPause, ButtonPausa, ButtonReload, ButtonReloadMS;
 
     private float TimeToSpawn = 1.25f;
     public Countdown myCountdown;
+
+    [SerializeField] private Collider2D Grid;
 
     private void Start()
     {
@@ -64,12 +67,10 @@ public class Game : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (Time.timeScale == 0.0f)
-        {
-        }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.timeScale == 1.0f)
         {
             clicks++;
+
             scoreText.text = Score.ToString("000");
             ScoreEndGame.text = Score.ToString("000");
             shotsText.text = HitShots.ToString() + "/" + clicks.ToString();
@@ -101,7 +102,6 @@ public class Game : MonoBehaviour
 
     public IEnumerator HitShot()
     {
-        totalhitShots++;
         HitShots++;
         Score += 10;
 
@@ -115,7 +115,6 @@ public class Game : MonoBehaviour
 
     public IEnumerator HitShotGold()
     {
-        totalhitShots++;
         HitShots++;
         Score += 30;
 
@@ -138,11 +137,29 @@ public class Game : MonoBehaviour
         if (Time.timeScale == 0.0f)
         {
             AudioManager.Instance.AmbientalMusic.Pause();
+            MenuPause.SetActive(true);
+            ButtonPausa.SetActive(false);
+            ButtonReload.SetActive(false);
+            ButtonReloadMS.SetActive(false);
         }
         else
         {
             AudioManager.Instance.PlayAmbientalMusic();
+            MenuPause.SetActive(false);
+            ButtonPausa.SetActive(true);
+            ButtonReload.SetActive(true);
+            ButtonReloadMS.SetActive(true);
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void NotClickButton()
+    {
+        clicks = 0;
     }
 
     public void EndGame()

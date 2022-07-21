@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Duck
   - GoldDuck
+  - NotClick
   layers:
   - Default
   - TransparentFX

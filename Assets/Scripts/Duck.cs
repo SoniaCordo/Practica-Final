@@ -32,7 +32,7 @@ public class Duck : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.timeScale == 1.0f)
         {
             if (health == 0 && tag == "Duck")
             {
@@ -43,6 +43,10 @@ public class Duck : MonoBehaviour
             {
                 StartCoroutine(DieGold());
                 AudioManager.Instance.PlayDuckSound();
+            }
+            else
+            {
+                health--;
             }
         }
     }

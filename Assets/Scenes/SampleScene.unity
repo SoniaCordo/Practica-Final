@@ -879,6 +879,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 667983753}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: NotClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470345732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,11 +1289,12 @@ MonoBehaviour:
   duckPrefab: {fileID: 7538400797818364257, guid: 9f46ee065c91ce04d8dc9465745dd027, type: 3}
   GoldDuckPrefab: {fileID: 4210530049774982049, guid: 87ebc402d04397f46a96f5327994fe0b, type: 3}
   EndGameScore: {fileID: 1620505665}
-  ButtonPause: {fileID: 742288261}
+  MenuPause: {fileID: 534611277}
+  ButtonPausa: {fileID: 742288261}
   ButtonReload: {fileID: 1833454144}
-  ButtonReloadMAxScore: {fileID: 176905371}
-  PauseMenu: {fileID: 534611277}
+  ButtonReloadMS: {fileID: 176905371}
   myCountdown: {fileID: 1772518835}
+  Grid: {fileID: 0}
 --- !u!4 &667983754
 Transform:
   m_ObjectHideFlags: 0
@@ -1307,7 +1320,7 @@ GameObject:
   - component: {fileID: 742288262}
   m_Layer: 5
   m_Name: PauseButton
-  m_TagString: Untagged
+  m_TagString: NotClick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1347,7 +1360,7 @@ GameObject:
   - component: {fileID: 784564967}
   m_Layer: 5
   m_Name: ButtonPause
-  m_TagString: Untagged
+  m_TagString: NotClick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1418,6 +1431,18 @@ MonoBehaviour:
       - m_Target: {fileID: 667983753}
         m_TargetAssemblyTypeName: Game, Assembly-CSharp
         m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 667983753}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: NotClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1972,6 +1997,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 667983753}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: NotClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1160864195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,6 +2166,18 @@ MonoBehaviour:
       - m_Target: {fileID: 667983753}
         m_TargetAssemblyTypeName: Game, Assembly-CSharp
         m_MethodName: RestartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 667983753}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: NotClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3574,6 +3623,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 667983753}
+        m_TargetAssemblyTypeName: Game, Assembly-CSharp
+        m_MethodName: NotClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1752682713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3594,7 +3655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4fde9cce8bd4fc47a5619797c51870b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95ec593f49edb5c46a789e3727d33839, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3973,7 +4034,7 @@ GameObject:
   - component: {fileID: 1909451213}
   m_Layer: 5
   m_Name: PauseImages
-  m_TagString: Untagged
+  m_TagString: NotClick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
